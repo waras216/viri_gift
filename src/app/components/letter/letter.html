@@ -1,0 +1,49 @@
+<section class="letter-section">
+  <div class="section-wrap">
+    <p class="eyebrow text-center">Una carta para ti</p>
+
+    @if (state() !== 'open') {
+      <div
+        class="envelope-stage"
+        [class.is-opening]="state() === 'opening' || state() === 'kissing'"
+        [class.is-kissing]="state() === 'kissing'"
+      >
+        <button
+          type="button"
+          class="envelope"
+          [disabled]="state() !== 'closed'"
+          [attr.aria-expanded]="state() !== 'closed'"
+          aria-controls="letter-card"
+          (click)="open()"
+        >
+          <span class="envelope-body">
+            <span class="envelope-flap" aria-hidden="true"></span>
+            <span class="envelope-seal" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#cda05a" stroke-width="1.2">
+                <path
+                  d="M12 20s-7.5-4.6-9.7-9.4C.7 6.8 3 3.5 6.4 3.5c2 0 3.6 1.1 5.6 3.3 2-2.2 3.6-3.3 5.6-3.3 3.4 0 5.7 3.3 4.1 7.1C19.5 15.4 12 20 12 20z"
+                />
+              </svg>
+            </span>
+          </span>
+          <span class="envelope-hint">Toca el sobre para abrirlo</span>
+        </button>
+
+        <div class="kiss-overlay" aria-hidden="true">
+          <span class="penguin penguin-left">🐧</span>
+          <span class="kiss-heart">💕</span>
+          <span class="penguin penguin-right">🐧</span>
+        </div>
+      </div>
+    }
+
+    @if (state() === 'open') {
+      <div class="letter-card" id="letter-card" role="region" aria-label="Carta">
+        @for (paragraph of paragraphs(); track paragraph) {
+          <p>{{ paragraph }}</p>
+        }
+        <p class="letter-sign">{{ signatureLine() }}<br />{{ signatureName() }}</p>
+      </div>
+    }
+  </div>
+</section>

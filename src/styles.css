@@ -1,3 +1,160 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "tailwindcss";
+
+/* ---------- Tipografía ---------- */
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/cormorant-italic500-latin.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2000-206F, U+2122;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/cormorant-italic500-latinext.woff2) format("woff2");
+  unicode-range: U+0100-017F, U+1E00-1EFF, U+2C60-2C7F;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/cormorant-normal600-latin.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2000-206F, U+2122;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/cormorant-normal600-latinext.woff2) format("woff2");
+  unicode-range: U+0100-017F, U+1E00-1EFF, U+2C60-2C7F;
+}
+
+/* ---------- Tokens ----------
+   Mundo visual único y deliberado: papel de carta rosa pálido a la luz del
+   día — blanco cálido, rosa suave, hilo dorado. No responde al tema
+   claro/oscuro del sistema a propósito, igual que una invitación impresa
+   no cambia de tinta según quién la lea. */
+:root {
+  --blush-50: #fdf6f6;
+  --blush-100: #f6e6e8;
+  --pink-200: #eed3d8;
+  --pink-400: #d9a3ae;
+  --rose-500: #c98a98;
+  --rose-600: #b06478;
+  --rose-700: #9c5866;
+  --gold-400: #c39a5c;
+  --gold-600: #85652f;
+  --paper: #fffbfa;
+  --ink-900: #3a1c26;
+  --ink-600: #7a4a58;
+
+  --font-display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --font-body: "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif;
+
+  --space-1: clamp(0.5rem, 0.45rem + 0.2vw, 0.75rem);
+  --space-2: clamp(1rem, 0.9rem + 0.4vw, 1.5rem);
+  --space-3: clamp(1.75rem, 1.5rem + 1vw, 2.75rem);
+  --space-4: clamp(3rem, 2.4rem + 2.4vw, 5rem);
+  --space-5: clamp(4.5rem, 3.4rem + 4.4vw, 8rem);
+
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+::selection { background: var(--rose-600); color: var(--paper); }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--blush-50);
+  color: var(--ink-600);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img, canvas, svg { display: block; max-width: 100%; }
+
+a {
+  color: var(--rose-700);
+  text-underline-offset: 0.2em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--rose-600);
+  outline-offset: 3px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink-900);
+  text-wrap: balance;
+  margin: 0;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin: 0 0 var(--space-2);
+}
+
+.accent-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.section-wrap {
+  max-width: 44rem;
+  margin-inline: auto;
+}
+
+.section-wrap-wide {
+  max-width: 68rem;
+  margin-inline: auto;
+}
+
+hr.thread {
+  border: none;
+  height: 1px;
+  width: 3.5rem;
+  margin: var(--space-2) auto;
+  background: linear-gradient(90deg, transparent, var(--pink-400), transparent);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ---------- Revelado al hacer scroll (usado por RevealOnScrollDirective) ---------- */
+.reveal {
+  display: block;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

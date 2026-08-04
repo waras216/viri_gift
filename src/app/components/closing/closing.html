@@ -1,0 +1,24 @@
+<section class="closing-section">
+  <div class="section-wrap">
+    <p class="eyebrow">Feliz aniversario</p>
+    <h2>Gracias por escribir esta historia conmigo, un día a la vez.</h2>
+    <hr class="thread" />
+
+    <div class="love-wrap">
+      <div class="love-burst" aria-hidden="true">
+        @for (n of floatingHearts; track n) {
+          <span class="floating-heart" [style.--i]="n">💕</span>
+        }
+      </div>
+      <p class="love-shout">
+        @for (word of loveWords; track $index) {
+          <span class="love-word">
+            @for (letter of word; track letter.index) {
+              <span class="love-letter" [style.--i]="letter.index">{{ letter.char }}</span>
+            }
+          </span>
+        }
+      </p>
+    </div>
+  </div>
+</section>

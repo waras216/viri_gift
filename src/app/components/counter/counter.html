@@ -1,0 +1,25 @@
+<section class="counter-section">
+  <div class="section-wrap">
+    <p class="eyebrow">El tiempo, contado</p>
+    <h2>Llevamos amándonos desde entonces</h2>
+    <hr class="thread" />
+    <div class="counter-grid">
+      <div class="counter-cell">
+        <span class="counter-num">{{ elapsed().years }}</span>
+        <span class="counter-label">Años</span>
+      </div>
+      <div class="counter-cell">
+        <span class="counter-num">{{ elapsed().months }}</span>
+        <span class="counter-label">Meses</span>
+      </div>
+      <div class="counter-cell">
+        <span class="counter-num">{{ elapsed().days }}</span>
+        <span class="counter-label">Días</span>
+      </div>
+      <div class="counter-cell">
+        <span class="counter-num">{{ elapsed().seconds }}</span>
+        <span class="counter-label">Segundos</span>
+      </div>
+    </div>
+  </div>
+</section>

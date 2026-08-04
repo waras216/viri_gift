@@ -1,0 +1,46 @@
+<section class="timeline-section">
+  <div class="section-wrap">
+    <p class="eyebrow">Nuestra historia</p>
+    <h2>Cómo llegamos hasta aquí</h2>
+
+    <div class="timeline">
+      @for (milestone of milestones(); track milestone.date + milestone.title) {
+        <div class="timeline-item" [class.has-photo]="milestone.photos?.length">
+          @if (milestone.photos?.length) {
+            <button
+              type="button"
+              class="timeline-dot"
+              (click)="openPhoto(milestone)"
+              [attr.aria-label]="'Ver foto de ' + milestone.title"
+            ></button>
+          }
+          <p class="timeline-date">{{ milestone.date }}</p>
+          <h3>{{ milestone.title }}</h3>
+          <p>{{ milestone.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+
+  <dialog #photoDialog class="photo-dialog" (click)="closePhoto()">
+    @if (activePhoto(); as photo) {
+      <img [src]="photo.src" [alt]="photo.alt" (click)="$event.stopPropagation()" />
+      @if (activePhotos().length > 1) {
+        <button
+          type="button"
+          class="photo-nav photo-prev"
+          (click)="prevPhoto(); $event.stopPropagation()"
+          aria-label="Foto anterior"
+        >‹</button>
+        <button
+          type="button"
+          class="photo-nav photo-next"
+          (click)="nextPhoto(); $event.stopPropagation()"
+          aria-label="Foto siguiente"
+        >›</button>
+        <p class="photo-counter">{{ activePhotoIndex() + 1 }} / {{ activePhotos().length }}</p>
+      }
+      <button type="button" class="photo-close" (click)="closePhoto()" aria-label="Cerrar foto">✕</button>
+    }
+  </dialog>
+</section>

@@ -1,0 +1,22 @@
+<section class="hero">
+  <app-petals-canvas />
+
+  <div class="seal" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#cda05a" stroke-width="1.2">
+      <path
+        d="M12 20s-7.5-4.6-9.7-9.4C.7 6.8 3 3.5 6.4 3.5c2 0 3.6 1.1 5.6 3.3 2-2.2 3.6-3.3 5.6-3.3 3.4 0 5.7 3.3 4.1 7.1C19.5 15.4 12 20 12 20z"
+      />
+    </svg>
+  </div>
+
+  <p class="eyebrow">Un regalo para ti</p>
+  <h1>Cada día contigo<br />sigue siendo mi favorito</h1>
+
+  <p class="names">{{ partnerNames() }}</p>
+  <p class="since">Juntos desde el {{ sinceDateLabel() }}</p>
+
+  <div class="scroll-cue">
+    <span class="line" aria-hidden="true"></span>
+    Sigue bajando
+  </div>
+</section>

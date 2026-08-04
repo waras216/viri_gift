@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+footer {
+  display: block;
+  text-align: center;
+  padding: var(--space-3);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-600);
+  background: var(--blush-100);
+  border-top: 1px solid var(--pink-200);
+}
