@@ -11,7 +11,7 @@ export const LETTER_PARAGRAPHS: readonly string[] = [
   'Antes que nada, gracias. Gracias por todo lo que has hecho por mí, por los momentos bonitos que hemos compartido y también por la paciencia que has tenido conmigo.',
   'Sé que estos meses no han sido fáciles. Reconozco que mis actitudes, mis errores y algunas decisiones te lastimaron. Me duele haberme dado cuenta tarde de muchas cosas y del daño que te causé. Lo lamento de verdad.',
   'No quiero escribir esto para convencerte de nada ni para decirte que todo ya está bien, porque sé que la confianza se reconstruye con tiempo y con hechos, no con palabras. Solo quiero que sepas que estoy trabajando en mí, no solo por nuestra relación, sino también para ser una mejor persona.',
-  'Gracias por seguir aquí y por darme la oportunidad de demostrar con acciones que puedo hacerlo mejor. No doy por hecho tu paciencia ni el cariño que me has seguido dando, y lo valoro muchísimo.',
+  'Gracias por seguir aquí y por darme la oportunidad de demostrar con acciones que puedo hacerlo mejor. Gracias por tu paciencia y el cariño que me has seguido dando, y lo valoro muchísimo.',
   'Quiero seguir construyendo esto contigo, paso a paso, respetando tu tiempo y demostrando cada día, con hechos, el hombre que quiero ser.',
   'Te amo mucho. Feliz aniversario de 2 meses. ❤️',
 ];
