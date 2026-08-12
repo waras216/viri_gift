@@ -24,7 +24,14 @@
 
   <dialog #photoDialog class="photo-dialog" (click)="closePhoto()">
     @if (activePhoto(); as photo) {
-      <img [src]="photo.src" [alt]="photo.alt" (click)="$event.stopPropagation()" />
+      <img
+        [src]="photo.src"
+        [alt]="photo.alt"
+        [class.is-loaded]="photoLoaded()"
+        (load)="onPhotoSettled()"
+        (error)="onPhotoSettled()"
+        (click)="$event.stopPropagation()"
+      />
       @if (activePhotos().length > 1) {
         <button
           type="button"
