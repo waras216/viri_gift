@@ -70,10 +70,15 @@
 * { box-sizing: border-box; }
 ::selection { background: var(--rose-600); color: var(--paper); }
 
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
 
 body {
   margin: 0;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
   background: var(--blush-50);
   color: var(--ink-600);
   font-family: var(--font-body);

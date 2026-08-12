@@ -7,6 +7,24 @@
   padding: var(--space-5) var(--space-3);
 }
 
+.timeline-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: var(--space-2) 0 0;
+  font-size: 0.85rem;
+  color: var(--ink-600);
+}
+
+.hint-dot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--rose-500, #e0778f);
+  box-shadow: 0 0 0 3px rgba(224, 119, 143, 0.25);
+}
+
 .timeline {
   margin-top: var(--space-4);
   position: relative;
@@ -48,6 +66,12 @@
   background: var(--rose-500, #e0778f);
   box-shadow: 0 0 0 4px var(--blush-100), 0 0 0 5px rgba(224, 119, 143, 0.45);
   cursor: pointer;
+}
+
+.timeline-dot::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
 }
 
 .timeline-dot:hover,
@@ -100,7 +124,7 @@
 
 .photo-dialog img {
   display: block;
-  max-width: min(90vw, 640px);
+  max-width: min(84vw, 640px);
   max-height: 85vh;
   width: auto;
   height: auto;

@@ -2,6 +2,12 @@
   <div class="section-wrap">
     <p class="eyebrow">Nuestra historia</p>
     <h2>Cómo llegamos hasta aquí</h2>
+    @if (hasPhotos()) {
+      <p class="timeline-hint">
+        <span class="hint-dot" aria-hidden="true"></span>
+        Toca los puntos rosas para ver la foto de ese momento
+      </p>
+    }
 
     <div class="timeline">
       @for (milestone of milestones(); track milestone.date + milestone.title) {

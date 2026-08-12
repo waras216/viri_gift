@@ -1,0 +1,142 @@
+:host {
+  display: block;
+}
+
+.game-section {
+  background: var(--blush-100);
+  padding: var(--space-5) var(--space-3);
+}
+
+.game-intro {
+  margin: var(--space-2) 0 0;
+  color: var(--ink-600);
+}
+
+.game-board {
+  position: relative;
+  margin-top: var(--space-4);
+}
+
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-align: center;
+  padding: var(--space-3);
+  background: rgba(253, 246, 246, 0.88);
+  backdrop-filter: blur(2px);
+  border-radius: 12px;
+}
+
+.game-score {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--ink-900);
+}
+
+.game-message {
+  margin: 0 0 0.4rem;
+  max-width: 22rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--rose-700);
+}
+
+.game-cta {
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.8rem;
+  background: var(--rose-500, #c98a98);
+  color: var(--paper, #fff);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 10px 20px -12px rgba(156, 88, 102, 0.5);
+}
+
+.game-cta:hover,
+.game-cta:focus-visible {
+  background: var(--gold-600);
+}
+
+.game-cta:focus-visible {
+  outline: 2px solid var(--gold-600);
+  outline-offset: 2px;
+}
+
+.game-hud {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 var(--space-2);
+  padding: 0 0.2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+}
+
+.hole-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  filter: blur(3px);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.hole-grid.is-playing {
+  filter: none;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hole {
+  aspect-ratio: 1;
+  border: 2px dashed var(--pink-400);
+  border-radius: 50%;
+  background: var(--paper);
+  display: grid;
+  place-items: center;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.hole:disabled {
+  cursor: default;
+}
+
+.hole:focus-visible {
+  outline: 2px solid var(--gold-600);
+  outline-offset: 2px;
+}
+
+.mole {
+  font-size: 2.4rem;
+  line-height: 1;
+  animation: mole-pop 0.18s ease-out;
+}
+
+@keyframes mole-pop {
+  from {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 26rem) {
+  .mole {
+    font-size: 2rem;
+  }
+}

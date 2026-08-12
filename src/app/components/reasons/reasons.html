@@ -1,0 +1,20 @@
+<section class="reasons-section">
+  <div class="section-wrap">
+    <p class="eyebrow text-center">Por qué te amo</p>
+    <h2 class="text-center">Solo algunas razones, entre muchas más</h2>
+    <hr class="thread" />
+
+    <ul class="reasons-grid">
+      @for (reason of reasons(); track reason; let i = $index) {
+        <li class="reason-card" [style.--i]="i">
+          <svg class="reason-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+            <path
+              d="M12 20s-7.5-4.6-9.7-9.4C.7 6.8 3 3.5 6.4 3.5c2 0 3.6 1.1 5.6 3.3 2-2.2 3.6-3.3 5.6-3.3 3.4 0 5.7 3.3 4.1 7.1C19.5 15.4 12 20 12 20z"
+            />
+          </svg>
+          <p>{{ reason }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

@@ -29,6 +29,10 @@ export interface TimelineMilestone {
 export class Timeline {
   readonly milestones = input.required<readonly TimelineMilestone[]>();
 
+  protected readonly hasPhotos = computed(() =>
+    this.milestones().some((milestone) => !!milestone.photos?.length),
+  );
+
   private readonly photoDialog = viewChild<ElementRef<HTMLDialogElement>>('photoDialog');
   protected readonly activePhotos = signal<readonly MilestonePhoto[]>([]);
   protected readonly activePhotoIndex = signal(0);

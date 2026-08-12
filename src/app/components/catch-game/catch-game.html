@@ -1,0 +1,53 @@
+<section class="game-section">
+  <div class="section-wrap">
+    <p class="eyebrow text-center">Un juego para ti</p>
+    <h2 class="text-center">Atrapa a Cachetes</h2>
+    <hr class="thread" />
+    <p class="game-intro text-center">
+      Cachetes se esconde y aparece por toda la pantalla. Tócalo antes de que los perros de Harry lo muerdan jaja
+    </p>
+
+    <div class="game-board">
+      @if (gameState() !== 'playing') {
+        <div class="game-overlay">
+          @if (gameState() === 'idle') {
+            <button type="button" class="game-cta" (click)="startGame()">Jugar</button>
+          } @else {
+            <p class="game-score">
+              Atrapaste a Cachetes <strong>{{ score() }}</strong>
+              {{ score() === 1 ? 'vez' : 'veces' }}
+            </p>
+            <p class="game-message">{{ resultMessage }}</p>
+            <button type="button" class="game-cta" (click)="startGame()">Jugar de nuevo</button>
+          }
+        </div>
+      } @else {
+        <p class="game-hud">
+          <span>Puntos: {{ score() }}</span>
+          <span>Tiempo: {{ timeLeft() }}s</span>
+        </p>
+      }
+
+      <div
+        class="hole-grid"
+        [class.is-playing]="gameState() === 'playing'"
+        [attr.aria-hidden]="gameState() !== 'playing'"
+      >
+        @for (hole of holes; track hole) {
+          <button
+            type="button"
+            class="hole"
+            [disabled]="gameState() !== 'playing'"
+            [attr.tabindex]="gameState() === 'playing' ? 0 : -1"
+            (click)="catchMole(hole)"
+            aria-label="Atrapar a Cachetes"
+          >
+            @if (activeHole() === hole) {
+              <span class="mole" aria-hidden="true">🐶</span>
+            }
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+</section>

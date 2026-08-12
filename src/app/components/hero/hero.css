@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: var(--space-4) var(--space-3);
+  padding: calc(var(--space-4) + env(safe-area-inset-top)) var(--space-3) var(--space-4);
   background:
     radial-gradient(60% 50% at 50% 18%, rgba(217, 163, 174, 0.32), transparent 70%),
     radial-gradient(90% 60% at 50% 100%, var(--blush-100), var(--blush-50) 65%);

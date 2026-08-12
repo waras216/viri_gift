@@ -19,6 +19,16 @@ export const LETTER_PARAGRAPHS: readonly string[] = [
 export const LETTER_SIGNATURE_LINE = 'Con todo mi cariño,';
 export const LETTER_SIGNATURE_NAME = 'Israel';
 
+export const REASONS: readonly string[] = [
+  'Porque eres sincera y directa.',
+  'Porque eres cariñosa.',
+  'Porque me encantan tu pelo, tu nariz, tu boca.',
+  'Porque eres una persona hermosa y te amo con el alma.',
+  'Porque jamás me juzgaste, a pesar de la oscuridad que me rodea.',
+  'Porque eres de las personas más puras que conozco, y irradias felicidad con solo aparecer.',
+  'Porque me generas paz.',
+];
+
 export const TIMELINE_MILESTONES: readonly TimelineMilestone[] = [
   {
     date: '20 de noviembre de 2025',
@@ -245,6 +255,34 @@ export const TIMELINE_MILESTONES: readonly TimelineMilestone[] = [
         alt: 'Viri haciendo un corazón con las manos durante una videollamada con Israel',
       },
     ],
+  },
+];
+
+export interface JourneyStop {
+  name: string;
+  description: string;
+}
+
+export const JOURNEY_STOPS: readonly JourneyStop[] = [
+  {
+    name: 'Puebla',
+    description: 'Donde me esperas a que regrese.',
+  },
+  {
+    name: 'Ciudad de Puebla',
+    description: 'De la mano por el centro histórico, conociéndonos más.',
+  },
+  {
+    name: 'Cholula',
+    description: 'Tu lugar favorito de todo el viaje: la Estrella de Puebla.',
+  },
+  {
+    name: 'CDMX',
+    description: 'Chapultepec, el zoológico, el Ángel de la Independencia... 24 horas de besos.',
+  },
+  {
+    name: 'De regreso a Playa',
+    description: 'Pronto te veo.',
   },
 ];
 
